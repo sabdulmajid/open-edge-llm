@@ -1,6 +1,12 @@
-# OpenEdge-LLM: Edge-to-Cloud Multimodal Assistant Platform
+# 🚀 OpenEdge-LLM
+### LLMs Anywhere—From Data Center to ESP32
 
-OpenEdge-LLM is a comprehensive platform demonstrating an edge-to-cloud architecture for multimodal AI assistants. It spans data ingestion, processing, model training, compilation for diverse targets, and serving, culminating in a user-facing application.
+OpenEdge-LLM bundles everything you need to build a modern, multimodal assistant. Train models, compile them for any device, and serve them with a sleek Next.js front-end—all from one repo.
+
+#### Why You'll Love It
+- **Edge-to-Cloud** deployment from GPUs to sub‑1W microcontrollers
+- **Multimodal** ingestion of text, images and sensor data
+- **One-Click Demo** to show off your smart home or factory assistant
 
 ## Project Layers and Technologies
 
@@ -20,6 +26,24 @@ OpenEdge-LLM is a comprehensive platform demonstrating an edge-to-cloud architec
 *   **Versatility**: Demonstrates cloud-class LLM capabilities alongside inference on < 1 W microcontrollers from a single repository.
 *   **Interoperability**: Showcases practical application and interchange between Beam, Spark, and Dask, plus a wide array of model compilers.
 *   **Demo-Friendly**: Enables tangible demonstrations, such as interacting with a smart home setup locally, even without internet connectivity.
+
+## Quick Demo
+
+1. Spin up the stack:
+   ```sh
+   docker-compose -f devops/docker-compose.yml up --build
+   ```
+2. Start the APIs:
+   ```sh
+   uvicorn frontend/backend/main:app --reload
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) and start chatting.
+
+**Example Conversation**
+```
+You: "Did I leave the lights on?"
+Assistant: "Nope. Last sensor reading shows all lights off."
+```
 
 ## Key Resources Utilized
 
