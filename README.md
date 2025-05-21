@@ -7,6 +7,7 @@ OpenEdge-LLM bundles everything you need to build a modern, multimodal assistant
 - **Edge-to-Cloud** deployment from GPUs to sub‑1W microcontrollers
 - **Multimodal** ingestion of text, images and sensor data
 - **One-Click Demo** to show off your smart home or factory assistant
+- **Built-in Chat** interface with simple conversation history
 
 ## Project Layers and Technologies
 
@@ -177,14 +178,14 @@ docker-compose -f devops/docker-compose.yml up --build
   ```
 
 ### 10. Frontend & APIs
-- Start FastAPI backend (health, file/image upload, RAG API):
+- Start FastAPI backend (health, file/image upload, RAG API, chat endpoint):
   ```sh
   uvicorn frontend/backend/main:app --reload
   uvicorn frontend/backend/file_api:app --reload
   uvicorn frontend/backend/image_api:app --reload
   uvicorn frontend/backend/rag_api:app --reload
   ```
-- Visit [http://localhost:3000](http://localhost:3000) for the Next.js UI.
+- Visit [http://localhost:3000](http://localhost:3000) for the Next.js UI and try chatting.
 
 ### 11. DevOps, CI/CD & Monitoring
 - GitHub Actions: Automated tests and builds on push to main.
