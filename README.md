@@ -77,10 +77,10 @@ git clone https://github.com/your-org/open-edge-llm.git
 cd open-edge-llm
 ```
 
-### 2. Configure Environment
-Copy the provided `.env.example` to `.env` and fill in your secrets as needed:
+### 2. Install Dependencies
+Run the helper script to install Python and Node requirements:
 ```sh
-cp devops/.env.example devops/.env
+bash devops/setup_env.sh
 ```
 
 ### 3. Launch Core Services (Dev)
@@ -185,7 +185,21 @@ docker-compose -f devops/docker-compose.yml up --build
   uvicorn frontend/backend/image_api:app --reload
   uvicorn frontend/backend/rag_api:app --reload
   ```
-- Visit [http://localhost:3000](http://localhost:3000) for the Next.js UI and try chatting.
+  - Visit [http://localhost:3000](http://localhost:3000) for the Next.js UI and try chatting.
+
+### Deploying the Next.js Frontend to Vercel
+Use the provided configuration in `frontend/web` to host the chat UI on Vercel.
+
+1. Install the Vercel CLI:
+   ```sh
+   npm install -g vercel
+   ```
+2. Deploy from within `frontend/web`:
+   ```sh
+   cd frontend/web
+   vercel --prod
+   ```
+   The command will output a URL for your deployed application. This environment cannot access Vercel to provide a live link.
 
 ### 11. DevOps, CI/CD & Monitoring
 - GitHub Actions: Automated tests and builds on push to main.
